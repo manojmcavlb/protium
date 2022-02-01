@@ -18,7 +18,64 @@ const Stocks = (props) => {
 		// console.log('dataStocks', dataStocks)
 		return (
 			<div className="main-container">
-				{dataStocks ?
+				<table>
+					<tr>
+						<th>S.No.</th>
+						<th>Description</th>
+						<th>Currency</th>
+						<th>Symbol</th>
+						<th>Share Class FIGI</th>
+						<th>Type</th>
+						<th>Mic</th>
+						{/* {"country":"US","currency":"USD","exchange":"NASDAQ NMS - GLOBAL MARKET","finnhubIndustry":"Technology","ipo":"1980-12-12","logo":"https://finnhub.io/api/logo?symbol=AAPL","marketCapitalization":2782234,"name":"Apple Inc","phone":"14089961010.0","shareOutstanding":16334.37,"ticker":"AAPL","weburl":"https://www.apple.com/"} */}
+					</tr>
+					<tbody>
+						{dataStocks ?
+							dataStocks && dataStocks.map((stock, index) => {
+								if (index < 20)
+									return <React.Fragment key={index}>
+										<tr>
+											<td>
+												{index + 1}
+											</td>
+											<td>
+												{stock.description}
+											</td>
+											<td>
+												{stock.currency}
+											</td>
+											<td>
+												{stock.symbol}
+											</td>
+											<td>
+												{stock.shareClassFIGI}
+											</td>
+											<td>
+												{stock.type}
+											</td>
+											<td>
+												{stock.mic}
+											</td>
+										</tr>
+									</React.Fragment>
+							})
+							:
+							null}
+					</tbody>
+				</table>
+
+				{/* <tr>
+					<th>S.No.</th>
+					<th>Description</th>
+					<th>Currency</th>
+					<th>Symbol</th>
+					<th>Share Class FIGI</th>
+					<th>Type</th>
+					<th>Mic</th>		
+					</tr>	 */}
+
+
+				{/* {dataStocks ?
 					dataStocks && dataStocks.map((stock, index) => {
 						if (index < 20)
 							return <div key={index} className="container">
@@ -26,6 +83,7 @@ const Stocks = (props) => {
 									<div className="col-md-6 form-control-cus">
 										<div className="item-wrapper">
 											<div className="item-content">
+												
 												<div className="control-group row">
 													<div className="col-md-6 control-label">
 														Description:
@@ -88,7 +146,7 @@ const Stocks = (props) => {
 							</div>
 					})
 					:
-					null}
+					null} */}
 			</div>
 		);
 	};

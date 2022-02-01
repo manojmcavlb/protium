@@ -33,6 +33,8 @@ function* getStockDetailAsync(action) {
     try {
         yield put({ type: GET_STOCK_DETAIL_REQUEST_ASYNC });
         var url = 'https://finnhub.io/api/v1/stock/symbol?exchange=US&token=c7rsp92ad3iel5ubie50';
+        // var url = 'https://finnhub.io/api/v1/stock/profile2?symbol=AAPL&token=c7rsp92ad3iel5ubie50';
+
         const output = yield fetch(url)
             .then(res => res.json());
 
