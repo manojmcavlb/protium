@@ -1,0 +1,18 @@
+.control-label {
+  font-weight: 400 !important;
+  text-align: right;
+}
+
+.form-control-cus {
+  font-weight: 700 !important;
+  text-align: left;
+}
+
+.main-container {
+  display: flex-row;
+  flex-wrap: wrap;
+}
+
+.item-content {
+  padding-bottom: 40px;
+}
